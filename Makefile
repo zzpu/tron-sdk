@@ -11,7 +11,7 @@ ldflags += -X main.builtAt=${built_at} -X main.builtBy=${built_by}
 cli := ./bin/${BUILD_TARGET}
 uname := $(shell uname)
 
-env := GO111MODULE=on
+env := GO111MODULE=on  CGO_LDFLAGS_ALLOW=".*"
 
 DIR := ${CURDIR}
 export CGO_LDFLAGS=-L$(DIR)/bin/lib -Wl,-rpath -Wl,\$ORIGIN/lib
